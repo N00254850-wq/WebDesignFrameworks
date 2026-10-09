@@ -1,11 +1,10 @@
+
 <!doctype html>
 <html lang="en-IE">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      Week 03 starter — Compass header/nav, support cells &amp; filter row
-    </title>
+    <title>Week 03 starter — Compass header/nav, support cells & filter row</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,41 +13,31 @@
     />
     <link rel="stylesheet" href="assets/app.css" />
   </head>
+
   <body class="bg-paper font-sans text-ink">
-    <!-- Base colour and type (bg-paper, font-sans, text-ink) are already
-         here, same three classes as weeks 1 and 2 — nothing new to add.
-         Nothing below has a layout class yet, though: the header row, the
-         nav links, the support cells, and the filter row's fieldsets are
-         all still in normal document flow, everything just stacking block
-         by block. That's what Flexbox is for. -->
 
     <header>
-      <div>
-        <a href="index.html">
-          <span aria-hidden="true"></span>
-          Compassssss
+      <div class="mx-auto flex max-w-5xl flex-wrap items-center gap-4 px-5 py-4">
+        <a href="index.html" class="flex items-center gap-2 font-bold">
+          <span aria-hidden="true" class="h-3 w-3 rounded-full bg-green"></span>
+          Compass
         </a>
-        <nav class="flex justify-center gap-4" aria-label="Primary">
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="find-support-services.html">Find support services</a>
-          <a href="student-stories.html">Student stories</a>
-          <a href="accommodations-faq.html">Accommodations FAQ</a>
-          <a href="events.html">Events &amp; drop-ins</a>
-          <a href="request-support.html">Request support</a>
+
+        <nav class="contents" aria-label="Primary">
+          <a href="index.html" aria-current="page" class="font-bold">Home</a>
+          <a href="find-support-services.html" class="font-bold">Find support services</a>
+          <a href="student-stories.html" class="font-bold">Student stories</a>
+          <a href="accommodations-faq.html" class="font-bold">Accommodations FAQ</a>
+          <a href="events.html" class="font-bold">Events &amp; drop-ins</a>
+          <a href="request-support.html" class="ml-auto font-bold text-green-900">Request support</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- Colour, border, padding, and type here are exactly what you built
-           in week 2 — carried over as given, so this week is only about
-           the one thing that's new: the icon still sits inline next to its
-           label instead of stacked above it, because nothing here is
-           flex yet. -->
       <ul class="list-none border-t-(length:--rule) border-ink pl-0">
-        <li
-          class="border-b-(length:--rule) border-ink bg-lime p-8 text-center text-on-light"
-        >
+
+        <li class="flex flex-col items-center gap-4 border-b-(length:--rule) border-ink bg-lime p-8 text-center text-on-light">
           <svg
             class="h-14 w-14"
             viewBox="0 0 24 24"
@@ -68,9 +57,8 @@
           </svg>
           <span class="font-display text-lg font-bold">Study skills</span>
         </li>
-        <li
-          class="border-b-(length:--rule) border-ink bg-ink-deep p-8 text-center text-on-dark"
-        >
+
+        <li class="flex flex-col items-center gap-4 border-b-(length:--rule) border-ink bg-ink-deep p-8 text-center text-on-dark">
           <svg
             class="h-14 w-14"
             viewBox="0 0 24 24"
@@ -85,13 +73,10 @@
             <rect x="3" y="13" width="4" height="7" rx="1.5" />
             <rect x="17" y="13" width="4" height="7" rx="1.5" />
           </svg>
-          <span class="font-display text-lg font-bold"
-            >Assistive technology</span
-          >
+          <span class="font-display text-lg font-bold">Assistive technology</span>
         </li>
-        <li
-          class="border-b-(length:--rule) border-ink bg-green p-8 text-center text-on-light"
-        >
+
+        <li class="flex flex-col items-center gap-4 border-b-(length:--rule) border-ink bg-green p-8 text-center text-on-light">
           <svg
             class="h-14 w-14"
             viewBox="0 0 24 24"
@@ -108,9 +93,8 @@
           </svg>
           <span class="font-display text-lg font-bold">Wellbeing</span>
         </li>
-        <li
-          class="border-b-(length:--rule) border-ink bg-pink p-8 text-center text-on-light"
-        >
+
+        <li class="flex flex-col items-center gap-4 border-b-(length:--rule) border-ink bg-pink p-8 text-center text-on-light">
           <svg
             class="h-14 w-14"
             viewBox="0 0 24 24"
@@ -128,83 +112,109 @@
           </svg>
           <span class="font-display text-lg font-bold">Social &amp; peer</span>
         </li>
+
       </ul>
 
-      <form aria-labelledby="filter-heading" method="get" action="#">
-        <h2 id="filter-heading">Filter services</h2>
+      
+  <form aria-labelledby="filter-heading" method="get" action="#" class="mx-auto max-w-5xl px-5 py-8">
+    <h2 id="filter-heading" class="mb-6 font-display text-2xl font-bold">Filter services</h2>
 
-        <div>
-          <fieldset>
-            <legend>Category</legend>
-            <label
-              ><input type="checkbox" name="category" value="study-skills" />
-              Study skills</label
-            >
-            <label
-              ><input type="checkbox" name="category" value="assistive-tech" />
-              Assistive technology</label
-            >
-            <label
-              ><input type="checkbox" name="category" value="wellbeing" />
-              Wellbeing</label
-            >
-            <label
-              ><input type="checkbox" name="category" value="financial" />
-              Financial</label
-            >
-            <label
-              ><input type="checkbox" name="category" value="social" /> Social
-              &amp; peer</label
-            >
-          </fieldset>
+    <div class="flex flex-wrap gap-4">
 
-          <fieldset>
-            <legend>Format</legend>
-            <label
-              ><input type="checkbox" name="format" value="in-person" /> In
-              person</label
-            >
-            <label
-              ><input type="checkbox" name="format" value="online" />
-              Online</label
-            >
-            <label
-              ><input type="checkbox" name="format" value="email" />
-              Email</label
-            >
-          </fieldset>
+      <fieldset class="border-(length:--rule) border-t-4 border-ink border-t-green bg-paper px-4 pt-3 pb-4">
+        <legend class="rounded-full bg-green px-3 py-1 font-display text-base font-bold text-on-light">
+          Category
+        </legend>
 
-          <fieldset>
-            <legend>Campus</legend>
-            <label
-              ><input type="checkbox" name="campus" value="city" /> City</label
-            >
-            <label
-              ><input type="checkbox" name="campus" value="riverside" />
-              Riverside</label
-            >
-            <label
-              ><input type="checkbox" name="campus" value="online-only" />
-              Online only</label
-            >
-          </fieldset>
+        <div class="flex flex-col gap-2">
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="category" value="study-skills" />
+            Study skills
+          </label>
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="category" value="assistive-tech" />
+            Assistive technology
+          </label>
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="category" value="wellbeing" />
+            Wellbeing
+          </label>
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="category" value="financial" />
+            Financial
+          </label>
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="category" value="social" />
+            Social &amp; peer
+          </label>
         </div>
-      </form>
+      </fieldset>
+
+      <fieldset class="border-(length:--rule) border-t-4 border-ink border-t-lime bg-paper px-4 pt-3 pb-4">
+        <legend class="rounded-full bg-lime px-3 py-1 font-display text-base font-bold text-on-light">
+          Format
+        </legend>
+
+        <div class="flex flex-col gap-2">
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="format" value="in-person" />
+            In person
+          </label>
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="format" value="online" />
+            Online
+          </label>
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="format" value="email" />
+            Email
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="border-(length:--rule) border-t-4 border-ink border-t-pink bg-paper px-4 pt-3 pb-4">
+        <legend class="rounded-full bg-pink px-3 py-1 font-display text-base font-bold text-on-light">
+          Campus
+        </legend>
+
+        <div class="flex flex-col gap-2">
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="campus" value="city" />
+            City
+          </label>
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="campus" value="riverside" />
+            Riverside
+          </label>
+          <label class="flex items-center gap-2 rounded-full border-(length:--rule) border-ink bg-paper px-3 py-1.5">
+            <input type="checkbox" name="campus" value="online-only" />
+            Online only
+          </label>
+        </div>
+      </fieldset>
+
+    </div>
+  </form>
+
     </main>
 
-    <!-- Homework target: build this into a real footer link list using
-         gap-x-*/gap-y-*. Nothing here has a class yet either. -->
     <footer>
       <nav aria-label="Footer">
-        <ul>
+        <ul class="flex flex-wrap gap-x-8 gap-y-4 ml-auto">
           <li>
-            <a href="find-support-services.html">Find support services</a>
+            <a href="find-support-services.html" class="font-bold color-green 900">Find support services</a>
           </li>
-          <li><a href="accommodations-faq.html">Accommodations FAQ</a></li>
-          <li><a href="events.html">Events &amp; drop-ins</a></li>
-          <li><a href="request-support.html">Request support</a></li>
+          <li>
+            <a href="accommodations-faq.html" class="font-bold color-green 900">Accommodations FAQ</a>
+          </li>
+          <li>
+            <a href="events.html" class="font-bold color-green 900">Events &amp; drop-ins</a>
+          </li>
+          <li>
+            <a href="request-support.html" class="font-bold color-green 900">Request support</a>
+          </li>
         </ul>
       </nav>
     </footer>
+
   </body>
 </html>
